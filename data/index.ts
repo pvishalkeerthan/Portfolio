@@ -44,7 +44,7 @@ export const gridItems = [
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
-    titleClassName: "justify-start",
+    titleClassName: "justify-start ",
     img: "/grid.svg",
     spareImg: "/b4.svg",
   },
