@@ -1,6 +1,7 @@
 "use client";
 
 import { FaLocationArrow } from "react-icons/fa6";
+import Image from "next/image"; // Import Image from next/image
 import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
 
@@ -17,25 +18,26 @@ const RecentProjects = () => {
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
             key={item.id}
           >
-            <PinContainer
-              title={item.title}// This can be updated if needed
-              href={item.link}
-            >
+            <PinContainer title={item.title} href={item.link}>
               <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
                 <div
                   className="absolute inset-0 overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
                 >
-                  <img
+                  <Image
                     src="/bg.png"
                     alt="background"
-                    className="object-cover w-full h-full"
+                    layout="fill" // Adjusts to the container size
+                    objectFit="cover" // Ensures the image covers the container
+                    className="object-cover"
                   />
                 </div>
-                <img
+                <Image
                   src={item.img}
                   alt="cover"
-                  className="z-10 absolute inset-0 object-cover w-full h-full"
+                  layout="fill" // Adjusts to the container size
+                  objectFit="cover" // Ensures the image covers the container
+                  className="z-10 absolute inset-0"
                 />
               </div>
 
@@ -63,10 +65,12 @@ const RecentProjects = () => {
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <img
+                      <Image
                         src={icon}
                         alt={`icon-${index}`}
-                        className="p-2 w-full h-full object-contain"
+                        layout="fill" // Adjusts to the container size
+                        objectFit="contain" // Ensures the image fits within the container
+                        className="p-2"
                       />
                     </div>
                   ))}

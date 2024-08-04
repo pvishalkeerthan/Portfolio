@@ -1,4 +1,5 @@
 import { FaArrowDown } from "react-icons/fa";
+import Image from "next/image"; // Import Image from next/image
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
@@ -41,13 +42,15 @@ const Hero = () => {
         />
       </div>
 
-      <div className="flex flex-col items-center justify-center relative my-20 z-10 ">
+      <div className="flex flex-col items-center justify-center relative my-20 z-10">
         <div className="flex items-center justify-center mb-8 fade-in">
-          {/* Replace with your image */}
-          <img
-            src="my.jpg"
+          {/* Replace <img> with <Image> */}
+          <Image
+            src="/my.jpg" // Ensure this path is correct
             alt="Vishal Keerthan"
-            className="w-[250px] h-[250px] md:w-[300px] md:h-[300px] rounded-full border-4 border-gray-900 dark:border-gray-100 object-cover"
+            width={300} // Adjust width as needed
+            height={300} // Adjust height as needed
+            className="rounded-full border-4 border-gray-900 dark:border-gray-100 object-cover"
           />
         </div>
 
@@ -58,7 +61,7 @@ const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-6 text-sm md:text-lg lg:text-2xl text-gray-700 dark:text-gray-300 fade-in">
-            Hi! I'm Vishal Keerthan, a passionate Computer Science student
+            Hi! I&apos;m Vishal Keerthan, a passionate Computer Science student
             dedicated to developing innovative digital solutions and
             transforming ideas into impactful technology.
           </p>

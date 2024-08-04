@@ -13,7 +13,7 @@ export const gridItems = [
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
     titleClassName: "justify-end",
-    img: "tech.jpg",
+    img: "/tech.jpg",
     spareImg: "",
   },
 
@@ -35,7 +35,7 @@ export const gridItems = [
     imgClassName: "w-full h-auto",
     titleClassName:
       "absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-2 text-sm",
-    img: "ml.jpg",
+    img: "/ml.jpg",
     spareImg: "",
   },
   {
@@ -76,7 +76,7 @@ export const projects = [
     id: 1,
     title: "Community Manager",
     des: "A platform to effortlessly connect, engage, and manage community interactions and activities.",
-    img: "CM.jpg",
+    img: "/CM.jpg",
     iconLists: [
       "/nodejs-icon.svg",
       "/getbootstrap-icon.svg",
@@ -90,7 +90,7 @@ export const projects = [
     id: 2,
     title: "Cobalt",
     des: "Enhancing code comprehension with AI-driven explanations and a secure code snippet repository",
-    img: "Cobalt.jpg",
+    img: "/Cobalt.jpg",
     iconLists: ["/reactjs-icon.svg", "/nextjs-icon.svg", "/ts.svg", "/w3_css-icon.svg", "/getbootstrap-icon.svg","/tailwindcss-icon.svg"],
     link: "https://github.com/pvishalkeerthan/Cobalt",
   },
@@ -98,7 +98,7 @@ export const projects = [
     id: 3,
     title: "PromptScape",
     des: "PromptScape is a dynamic platform for discovering, creating, and sharing creative prompts to inspire your writing and brainstorming",
-    img: "promptscape.png",
+    img: "/promptscape.png",
     iconLists: ["/nodejs-icon.svg", "/reactjs-icon.svg", "/ts.svg", "/nextjs-icon.svg", "/tailwindcss-icon.svg"],
     link: "https://github.com/pvishalkeerthan/PromptScape",
   },
@@ -106,7 +106,7 @@ export const projects = [
     id: 4,
     title: "Study_Nest",
     des: "A fictional educational platform showcasing various courses with a clean, responsive design.",
-    img: "Study_Next.png",
+    img: "/Study_Next.png",
     iconLists: ["/javascript-icon.svg", "/w3_html5-icon.svg", "/w3_css-icon.svg"],
     link: "https://github.com/pvishalkeerthan/Study_Nest",
   },
@@ -210,7 +210,7 @@ export const socialMedia = [
   },
   {
     id: 2,
-    img: "codechef.png",
+    img: "/codechef.png",
     link: "https://www.codechef.com/users/pvishal",
   },
   {
