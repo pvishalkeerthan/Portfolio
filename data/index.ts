@@ -1,7 +1,9 @@
 export const navItems = [
   { name: "About", link: "#about" },
+  { name: "Experience", link: "#experience" },
   { name: "Projects", link: "#projects" },
   { name: "Achievements", link: "#achievements" },
+  { name: "Tech Stack", link: "#tech-stack" },
   { name: "Contact", link: "#contact" },
 ];
 
@@ -74,41 +76,83 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
+    title: "Test.ai",
+    des: "Personalized test & feedback platform with gamified learning, real-time assessments, and collaborative quizzes.",
+    img: "/test.png",
+    iconLists: [
+      "/nodejs-icon.svg",
+      "/reactjs-icon.svg",
+      "/nextjs-icon.svg",
+      "/mongodb-icon.svg",
+      "/tailwindcss-icon.svg",
+    ],
+    link: "https://github.com/pvishalkeerthan/test",
+  },
+  {
+    id: 2,
+    title: "Bob-Blockchain",
+    des: "Data labeling platform for data scientists with Solana integration. Quest-based rewards and collaboration tools.",
+    img: "/bob.png",
+    iconLists: [
+      "/reactjs-icon.svg",
+      "/nodejs-icon.svg",
+      "/mongodb-icon.svg",
+      "/tailwindcss-icon.svg",
+    ],
+    link: "https://github.com/pvishalkeerthan/Bob-blockchain",
+  },
+  {
+    id: 3,
+    title: "Sakhi",
+    des: "Tech-powered security and empowerment app for women. Safety features with modern technology integration.",
+    img: "/sakhi.png",
+    iconLists: [
+      "/reactjs-icon.svg",
+      "/nodejs-icon.svg",
+      "/mongodb-icon.svg",
+      "/express.png",
+    ],
+    link: "https://github.com/pvishalkeerthan/sakhi",
+  },
+  {
+    id: 4,
+    title: "PromptScape",
+    des: "Dynamic platform for discovering, creating, and sharing creative prompts to inspire writing and brainstorming.",
+    img: "/promptscape.png",
+    iconLists: [
+      "/reactjs-icon.svg",
+      "/nextjs-icon.svg",
+      "/ts.svg",
+      "/mongodb-icon.svg",
+      "/tailwindcss-icon.svg",
+    ],
+    link: "https://github.com/pvishalkeerthan/PromptScape",
+  },
+  {
+    id: 5,
     title: "Community Manager",
-    des: "A platform to effortlessly connect, engage, and manage community interactions and activities.",
+    des: "Platform to effortlessly connect, engage, and manage community interactions and activities.",
     img: "/CM.jpg",
     iconLists: [
       "/nodejs-icon.svg",
       "/getbootstrap-icon.svg",
       "/tailwindcss-icon.svg",
       "/mongodb-icon.svg",
-      "/w3_css-icon.svg"
+      "/w3_css-icon.svg",
     ],
     link: "https://github.com/pvishalkeerthan/Community_Manager",
   },
   {
-    id: 2,
-    title: "Cobalt",
-    des: "Enhancing code comprehension with AI-driven explanations and a secure code snippet repository",
-    img: "/Cobalt.jpg",
-    iconLists: ["/reactjs-icon.svg", "/nextjs-icon.svg", "/ts.svg", "/w3_css-icon.svg", "/getbootstrap-icon.svg","/tailwindcss-icon.svg"],
-    link: "https://github.com/pvishalkeerthan/Cobalt",
-  },
-  {
-    id: 3,
-    title: "PromptScape",
-    des: "PromptScape is a dynamic platform for discovering, creating, and sharing creative prompts to inspire your writing and brainstorming",
-    img: "/promptscape.png",
-    iconLists: ["/nodejs-icon.svg", "/reactjs-icon.svg", "/ts.svg", "/nextjs-icon.svg", "/tailwindcss-icon.svg"],
-    link: "https://github.com/pvishalkeerthan/PromptScape",
-  },
-  {
-    id: 4,
-    title: "Study_Nest",
-    des: "A fictional educational platform showcasing various courses with a clean, responsive design.",
-    img: "/Study_Next.png",
-    iconLists: ["/javascript-icon.svg", "/w3_html5-icon.svg", "/w3_css-icon.svg"],
-    link: "https://github.com/pvishalkeerthan/Study_Nest",
+    id: 6,
+    title: "Wakey-Wakey",
+    des: "Modern alarm and productivity app with smart features to help you start your day right.",
+    img: "/wakey.png",
+    iconLists: [
+      "/reactjs-icon.svg",
+      "/javascript-icon.svg",
+      "/w3_css-icon.svg",
+    ],
+    link: "https://github.com/pvishalkeerthan/wakey-wakey",
   },
 ];
 
@@ -181,24 +225,17 @@ export const companies = [
 export const workExperience = [
   {
     id: 1,
-    title: "CodeChef 2-Star Rating",
-    desc: "Contributed to the development of an interactive web platform using React.js, enhancing user engagement.",
-    className: "md:col-span-2",
-    thumbnail: "/exp1.svg",
-  },
-  // {
-  //   id: 2,
-  //   title: "Hackathon Achievements",
-  //   desc: "Developed cross-platform mobile applications for iOS and Android using React Native, winning multiple hackathons.",
-  //   className: "md:col-span-2",
-  //   thumbnail: "/exp2.svg",
-  // },
-  {
-    id: 4,
-    title: "LeetCode & GeeksforGeeks Contributions",
-    desc: "Solved nearly 300 problems, demonstrating proficiency in algorithms and problem-solving with modern frontend technologies.",
+    title: "Open Source Developer - DevFest AI & GSSOC",
+    desc: "Recognized among the Top 15 internationally for impactful contributions. Streamlined documentation and code review processes, reducing onboarding time by 12%.",
     className: "md:col-span-2",
     thumbnail: "/exp2.svg",
+  },
+  {
+    id: 2,
+    title: "Open Source Developer - Hacktoberfest",
+    desc: "Enhanced 10+ open-source projects and led contributor onboarding, improving ramp-up time and codebase stability by 15%.",
+    className: "md:col-span-2",
+    thumbnail: "/exp1.svg",
   },
 ];
 

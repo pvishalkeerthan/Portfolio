@@ -24,8 +24,7 @@ const Footer = () => {
           <span className="text-purple">technology</span> and innovation.
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center">
-          I am passionate about technology and eager to contribute to exciting
-          projects. Let’s connect and explore how we can work together.
+          Looking for the next impossible problem to solve. Let's connect.
         </p>
         <a href="mailto:p.vishalkeerthan@gmail.com">
           <MagicButton
@@ -37,7 +36,7 @@ const Footer = () => {
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center ml-32 mr-28">
         <p className="md:text-base text-sm md:font-normal font-light">
-          Copyright © 2024 Vishal Keerthan
+          Copyright © 2025 Vishal Keerthan
         </p>
 
         <div className="flex items-center md:gap-3 gap-6">

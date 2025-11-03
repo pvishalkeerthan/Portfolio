@@ -9,13 +9,12 @@ const RecentProjects = () => {
   return (
     <div className="py-20" id="projects">
       <h1 className="heading">
-        A small selection of{" "}
-        <span className="text-purple">recent projects</span>
+        Recent <span className="text-purple">Projects</span>
       </h1>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 p-4 mt-16 max-w-7xl mx-auto">
         {projects.map((item) => (
           <div
-            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
+            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center w-full"
             key={item.id}
           >
             <PinContainer title={item.title} href={item.link}>
@@ -36,8 +35,8 @@ const RecentProjects = () => {
                   src={item.img}
                   alt="cover"
                   layout="fill" // Adjusts to the container size
-                  objectFit="cover" // Ensures the image covers the container
-                  className="z-10 absolute inset-0"
+                  objectFit="contain" // Show full project image without cropping
+                  className="z-10 absolute inset-0 object-contain"
                 />
               </div>
 

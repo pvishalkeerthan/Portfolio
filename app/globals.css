@@ -142,3 +142,13 @@
   animation: fadeIn 2s ease-out;
   /* Adjust timing for smoothness */
 }
+
+/* Music Disk Spin Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

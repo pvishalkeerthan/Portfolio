@@ -1,4 +1,4 @@
-import { FaArrowDown } from "react-icons/fa";
+import { FaFileDownload } from "react-icons/fa";
 import Image from "next/image"; // Import Image from next/image
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
@@ -43,13 +43,13 @@ const Hero = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center relative my-20 z-10">
+        {/* Profile Image */}
         <div className="flex items-center justify-center mb-8 fade-in">
-          {/* Replace <img> with <Image> */}
           <Image
-            src="/my.jpg" // Ensure this path is correct
+            src="/my.jpg"
             alt="Vishal Keerthan"
-            width={300} // Adjust width as needed
-            height={300} // Adjust height as needed
+            width={300}
+            height={300}
             className="rounded-full border-4 border-gray-900 dark:border-gray-100 object-cover"
           />
         </div>
@@ -61,18 +61,86 @@ const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-6 text-sm md:text-lg lg:text-2xl text-gray-700 dark:text-gray-300 fade-in">
-            Hi! I&apos;m Vishal Keerthan, a passionate Computer Science student
-            dedicated to developing innovative digital solutions and
-            transforming ideas into impactful technology.
+            Some collect trophies. I collect &apos;holy shit, that actually
+            works&apos; moments.
           </p>
 
-          <a onClick={(e) => handleLinkClick(e, "#about")} className="mt-8">
-            <MagicButton
-              title="Explore My Work"
-              icon={<FaArrowDown />}
-              position="right"
-            />
-          </a>
+          {/* Social Media Icons */}
+          <div className="flex items-center justify-center gap-6 mb-6 fade-in">
+            <a
+              href="https://github.com/pvishalkeerthan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-16 h-16 rounded-full bg-purple-500/10 backdrop-blur-sm border border-purple-500/30 hover:bg-purple-500/20 hover:scale-110 transition-all duration-300 flex items-center justify-center"
+              aria-label="GitHub"
+            >
+              <Image
+                src="/github-icon.svg"
+                alt="GitHub"
+                width={32}
+                height={32}
+                className="opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/vishal-keerthan/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-16 h-16 rounded-full bg-purple-500/10 backdrop-blur-sm border border-purple-500/30 hover:bg-purple-500/20 hover:scale-110 transition-all duration-300 flex items-center justify-center"
+              aria-label="LinkedIn"
+            >
+              <Image
+                src="/link.svg"
+                alt="LinkedIn"
+                width={32}
+                height={32}
+                className="opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </a>
+            <a
+              href="https://www.codechef.com/users/pvishal"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-16 h-16 rounded-full bg-purple-500/10 backdrop-blur-sm border border-purple-500/30 hover:bg-purple-500/20 hover:scale-110 transition-all duration-300 flex items-center justify-center"
+              aria-label="CodeChef"
+            >
+              <Image
+                src="/codechef.png"
+                alt="CodeChef"
+                width={32}
+                height={32}
+                className="opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </a>
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex items-center justify-center gap-4 mt-8 fade-in">
+            <a
+              href="https://drive.google.com/file/d/1RMq_VYRQa9kYam9gEhLz2QacojdwX40x/view?usp=drivesdk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <MagicButton
+                title="Resume"
+                icon={<FaFileDownload />}
+                position="left"
+                otherClasses="w-auto"
+              />
+            </a>
+            <a
+              href="mailto:p.vishalkeerthan@gmail.com"
+              className="inline-block"
+            >
+              <MagicButton
+                title="Lets Get in Touch"
+                icon={null}
+                position="right"
+                otherClasses="w-auto"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </div>

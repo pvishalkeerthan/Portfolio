@@ -56,7 +56,7 @@ export const FloatingNav = ({
         animate={{ y: visible ? 0 : -100, opacity: visible ? 1 : 0 }}
         transition={{ duration: 0.3 }}
         className={cn(
-          "flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-10 inset-x-0 mx-auto px-10 py-5 rounded-lg border border-black/10 shadow-lg items-center justify-center space-x-4",
+          "flex max-w-fit fixed z-[5000] top-10 inset-x-0 mx-auto px-10 py-5 rounded-lg border border-black/10 shadow-lg items-center justify-center space-x-4",
           className
         )}
         style={{
@@ -71,7 +71,7 @@ export const FloatingNav = ({
             key={`link-${idx}`}
             onClick={() => scrollToSection(navItem.link.replace("#", ""))} // Remove hash if included
             className={cn(
-              "relative flex items-center space-x-1 text-neutral-600 dark:text-neutral-50 hover:text-neutral-500 dark:hover:text-neutral-300 max-w-7xl w-full"
+              "relative flex items-center space-x-1 text-neutral-600 dark:text-neutral-50 hover:text-neutral-500 dark:hover:text-neutral-300 whitespace-nowrap"
             )}
           >
             <span className="block sm:hidden">{navItem.icon}</span>

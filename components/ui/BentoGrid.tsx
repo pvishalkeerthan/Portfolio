@@ -36,6 +36,7 @@ export const BentoGridItem = ({
   imgClassName,
   titleClassName,
   spareImg,
+  children,
 }: {
   className?: string;
   id: number;
@@ -45,6 +46,7 @@ export const BentoGridItem = ({
   imgClassName?: string;
   titleClassName?: string;
   spareImg?: string;
+  children?: React.ReactNode;
 }) => {
   const leftLists = [
     "C++",
@@ -130,52 +132,56 @@ export const BentoGridItem = ({
           </BackgroundGradientAnimation>
         )}
 
-        <div
-          className={cn(
-            titleClassName,
-            "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
-          )}
-        >
-          <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
-            {description}
-          </div>
+        {children ? (
+          children
+        ) : (
           <div
-            className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10`}
+            className={cn(
+              titleClassName,
+              "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
+            )}
           >
-            {title}
-          </div>
-
-          {id === 2 && <GridGlobe />}
-
-          {id === 5 && (
-            <div className="tech-stack-container">
-              {leftLists.concat(rightLists).map((item, i) => (
-                <div key={i} className="tech-badge">
-                  {item}
-                </div>
-              ))}
+            <div
+              className={`font-sans text-lg lg:text-3xl font-bold z-10 w-full`}
+            >
+              {title}
             </div>
-          )}
+            <div className="font-sans font-extralight md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
+              {description}
+            </div>
 
-          {id === 6 && (
-            <div className="mt-5 relative">
-              <div
-                className={`absolute -bottom-5 right-0 ${
-                  copied ? "block" : "block"
-                }`}
-              >
-                <Lottie options={defaultOptions} height={200} width={400} />
+            {id === 2 && <GridGlobe />}
+
+            {id === 5 && (
+              <div className="tech-stack-container">
+                {leftLists.concat(rightLists).map((item, i) => (
+                  <div key={i} className="tech-badge">
+                    {item}
+                  </div>
+                ))}
               </div>
-              <MagicButton
-                title={copied ? "Email is Copied!" : "Copy my email address"}
-                icon={<IoCopyOutline />}
-                position="left"
-                handleClick={handleCopy}
-                otherClasses="!bg-[#161A31]"
-              />
-            </div>
-          )}
-        </div>
+            )}
+
+            {id === 6 && (
+              <div className="mt-5 relative">
+                <div
+                  className={`absolute -bottom-5 right-0 ${
+                    copied ? "block" : "block"
+                  }`}
+                >
+                  <Lottie options={defaultOptions} height={200} width={400} />
+                </div>
+                <MagicButton
+                  title={copied ? "Email is Copied!" : "Copy my email address"}
+                  icon={<IoCopyOutline />}
+                  position="left"
+                  handleClick={handleCopy}
+                  otherClasses="!bg-[#161A31]"
+                />
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
