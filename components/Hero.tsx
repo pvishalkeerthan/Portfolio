@@ -1,3 +1,4 @@
+"use client";
 import { FaFileDownload } from "react-icons/fa";
 import Image from "next/image"; // Import Image from next/image
 import MagicButton from "./MagicButton";
@@ -11,9 +12,11 @@ const Hero = () => {
     link: string
   ) => {
     event.preventDefault(); // Prevent default anchor behavior
-    const section = document.querySelector(link);
-    if (section) {
+    if (typeof document !== "undefined") {
+      const section = document.querySelector(link);
+      if (section) {
       section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
   };
 
