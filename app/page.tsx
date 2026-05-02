@@ -96,44 +96,30 @@ export default function Home() {
             <h2 className="font-oswald uppercase text-sm sm:text-base hairline-b pb-1 mb-1 shrink-0 transition-all">Experience</h2>
             <div className="text-xs overflow-y-auto pr-2">
               {/* Experience 1 */}
-              <div className="mb-1.5">
-                <div className="flex justify-between items-baseline">
-                  <span className="font-bold font-oswald uppercase block text-news-accent">Software Engineer</span>
-                  <span className="font-courier text-[9px] uppercase">Dec '25 – Mar '26</span>
+              <div className="mb-2 lg:mb-8">
+                <div className="flex justify-between items-baseline lg:mb-1">
+                  <span className="font-bold font-oswald uppercase block text-news-accent text-[11px] lg:text-sm">Software Engineer</span>
+                  <span className="font-courier text-[9px] lg:text-[10px] uppercase">Dec '25 – Mar '26</span>
                 </div>
-                <p className="font-bold italic mt-0.5 mb-1 text-news-ink/80">Geode Labs</p>
-                <p className="leading-tight mt-0.5 text-justify-newspaper">
+                <p className="font-bold italic mt-0.5 mb-1 lg:mb-2 text-news-ink/80 text-[11px] lg:text-xs">Geode Labs</p>
+                <p className="leading-tight lg:leading-relaxed mt-0.5 lg:mt-1 text-justify-newspaper">
                   Built and shipped end-to-end features for ETHStars and Geode across live production systems. Designed backend services powering real-time data accuracy.
                 </p>
               </div>
               {/* Experience 2 */}
-              <div className="mb-1.5">
-                <div className="flex justify-between items-baseline">
-                  <span className="font-bold font-oswald uppercase block text-news-accent">OS Developer</span>
-                  <span className="font-courier text-[9px] uppercase">Sep '24 – Nov '24</span>
+              <div className="mb-2 lg:mb-8">
+                <div className="flex justify-between items-baseline lg:mb-1">
+                  <span className="font-bold font-oswald uppercase block text-news-accent text-[11px] lg:text-sm">OS Developer</span>
+                  <span className="font-courier text-[9px] lg:text-[10px] uppercase">Sep '24 – Nov '24</span>
                 </div>
-                <p className="font-bold italic mt-0.5 mb-1 text-news-ink/80">Hacktoberfest · DevFest AI</p>
-                <p className="leading-tight mt-0.5 text-justify-newspaper">
+                <p className="font-bold italic mt-0.5 mb-1 lg:mb-2 text-news-ink/80 text-[11px] lg:text-xs">Hacktoberfest · DevFest AI</p>
+                <p className="leading-tight lg:leading-relaxed mt-0.5 lg:mt-1 text-justify-newspaper">
                   Contributed across multiple repos (backend fixes, UI improvements). Ranked Top 15 out of 500+ teams competing in full-stack problem statements.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Volunteering */}
-          <div className="shrink-0 pt-1.5 hairline-t">
-            <h2 className="font-oswald uppercase text-base hairline-b pb-1 mb-0.5 shrink-0">Volunteering</h2>
-            <div className="text-xs">
-              <div className="mb-1">
-                <span className="font-bold font-oswald uppercase block text-news-accent">Web Dev Lead</span>
-                <p className="leading-snug mt-0.5"><span className="font-bold">Google Developer Groups CVR</span>. Led web team, organized hackathons, conducted workshops for 150+ students.</p>
-              </div>
-              <div className="mb-0">
-                <span className="font-bold font-oswald uppercase block text-news-accent">Event Coordinator</span>
-                <p className="leading-snug mt-0.5"><span className="font-bold">Ciencia, 5K Run</span>. Organized logistics and overall coordination.</p>
-              </div>
-            </div>
-          </div>
         </section>
 
         {/* Center Main (Col 2 & 3) */}
@@ -176,9 +162,14 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5 flex-1 min-h-[200px] overflow-y-auto pr-2 pb-2">
             
             {/* Project 1 */}
-            <article className="flex flex-col sm:pr-4 sm:hairline-r">
-              <h3 className="font-playfair text-lg font-bold leading-tight mb-1 headline-hover cursor-pointer shrink-0">
-                <a href="https://github.com/pvishalkeerthan/Sambhav" target="_blank" rel="noreferrer">Sambhav: AI Career Platform</a>
+            <a 
+              href="https://github.com/pvishalkeerthan/Sambhav" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="flex flex-col sm:pr-4 sm:hairline-r group cursor-pointer p-1 -m-1 rounded-sm transition-all duration-200"
+            >
+              <h3 className="font-playfair text-lg font-bold leading-tight mb-1 group-hover:text-news-accent group-hover:underline group-hover:decoration-[3px] group-hover:underline-offset-4 transition-all duration-200 shrink-0">
+                Sambhav: AI Career Platform
               </h3>
               <div className="text-[10px] sm:text-[11px] text-justify-newspaper line-clamp-3">
                 Empowering marginalized communities through AI-driven skill development. Features smart assessment logic, voice evaluation via Whisper and Gemini, and a real-time placement dashboard.
@@ -186,12 +177,17 @@ export default function Home() {
               <div className="mt-2 text-[9px] font-courier uppercase tracking-tight text-news-ink/60 italic">
                 Stack: Next.js 15, Flask, Supabase, Whisper, Gemini
               </div>
-            </article>
+            </a>
 
             {/* Project 2 */}
-            <article className="flex flex-col">
-              <h3 className="font-playfair text-lg font-bold leading-tight mb-1 headline-hover cursor-pointer shrink-0">
-                <a href="https://github.com/pvishalkeerthan/sakhi" target="_blank" rel="noreferrer">Sakhi: Women Safety App</a>
+            <a 
+              href="https://github.com/pvishalkeerthan/sakhi" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="flex flex-col group cursor-pointer p-1 -m-1 rounded-sm transition-all duration-200"
+            >
+              <h3 className="font-playfair text-lg font-bold leading-tight mb-1 group-hover:text-news-accent group-hover:underline group-hover:decoration-[3px] group-hover:underline-offset-4 transition-all duration-200 shrink-0">
+                Sakhi: Women Safety App
               </h3>
               <div className="text-[10px] sm:text-[11px] text-justify-newspaper line-clamp-3">
                 A tech-powered security platform empowering women through geofencing, spycam detection, and legal aid chatbots. Features real-time SOS alerts triggered by device movement.
@@ -199,12 +195,17 @@ export default function Home() {
               <div className="mt-2 text-[9px] font-courier uppercase tracking-tight text-news-ink/60 italic">
                 Stack: React, Node.js, MongoDB, Geolocation
               </div>
-            </article>
+            </a>
 
             {/* Project 3 */}
-            <article className="flex flex-col sm:pr-4 sm:hairline-r">
-              <h3 className="font-playfair text-lg font-bold leading-tight mb-1 headline-hover cursor-pointer shrink-0">
-                <a href="https://github.com/pvishalkeerthan/Bob-blockchain" target="_blank" rel="noreferrer">Bob: Crowdsourced Intelligence</a>
+            <a 
+              href="https://github.com/pvishalkeerthan/Bob-blockchain" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="flex flex-col sm:pr-4 sm:hairline-r group cursor-pointer p-1 -m-1 rounded-sm transition-all duration-200"
+            >
+              <h3 className="font-playfair text-lg font-bold leading-tight mb-1 group-hover:text-news-accent group-hover:underline group-hover:decoration-[3px] group-hover:underline-offset-4 transition-all duration-200 shrink-0">
+                Bob: Crowdsourced Intelligence
               </h3>
               <div className="text-[10px] sm:text-[11px] text-justify-newspaper line-clamp-3">
                 A Solana-powered marketplace for data labeling and content rating. Businesses set bounties in SOL while global contributors earn rewards for high-quality ML data insights.
@@ -212,12 +213,17 @@ export default function Home() {
               <div className="mt-2 text-[9px] font-courier uppercase tracking-tight text-news-ink/60 italic">
                 Stack: Solana, Web3, React, Node.js
               </div>
-            </article>
+            </a>
 
             {/* Project 4 */}
-            <article className="flex flex-col">
-              <h3 className="font-playfair text-lg font-bold leading-tight mb-1 headline-hover cursor-pointer shrink-0">
-                <a href="https://github.com/pvishalkeerthan/wakey-wakey" target="_blank" rel="noreferrer">Wakey-Wakey: Uptime Monitoring</a>
+            <a 
+              href="https://github.com/pvishalkeerthan/wakey-wakey" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="flex flex-col group cursor-pointer p-1 -m-1 rounded-sm transition-all duration-200"
+            >
+              <h3 className="font-playfair text-lg font-bold leading-tight mb-1 group-hover:text-news-accent group-hover:underline group-hover:decoration-[3px] group-hover:underline-offset-4 transition-all duration-200 shrink-0">
+                Wakey-Wakey: Uptime Monitoring
               </h3>
               <div className="text-[10px] sm:text-[11px] text-justify-newspaper line-clamp-3">
                 Decentralized uptime monitoring utilizing a global validator network. Provides real-time latency analytics and response trends while rewarding node operators with SOL.
@@ -225,12 +231,17 @@ export default function Home() {
               <div className="mt-2 text-[9px] font-courier uppercase tracking-tight text-news-ink/60 italic">
                 Stack: Solana, Next.js, Prisma, WebSockets
               </div>
-            </article>
+            </a>
 
             {/* Project 5 */}
-            <article className="flex flex-col sm:pr-4 sm:hairline-r">
-              <h3 className="font-playfair text-lg font-bold leading-tight mb-1 headline-hover cursor-pointer shrink-0">
-                <a href="https://github.com/pvishalkeerthan/Think_Track" target="_blank" rel="noreferrer">ThinkTrack: Personalized Testing</a>
+            <a 
+              href="https://github.com/pvishalkeerthan/Think_Track" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="flex flex-col sm:pr-4 sm:hairline-r group cursor-pointer p-1 -m-1 rounded-sm transition-all duration-200"
+            >
+              <h3 className="font-playfair text-lg font-bold leading-tight mb-1 group-hover:text-news-accent group-hover:underline group-hover:decoration-[3px] group-hover:underline-offset-4 transition-all duration-200 shrink-0">
+                ThinkTrack: Personalized Testing
               </h3>
               <div className="text-[10px] sm:text-[11px] text-justify-newspaper line-clamp-3">
                 A gamified learning platform featuring customizable quizzes, collaborative test-taking, and AI-powered progress tracking to visualize educational growth and milestones.
@@ -238,12 +249,17 @@ export default function Home() {
               <div className="mt-2 text-[9px] font-courier uppercase tracking-tight text-news-ink/60 italic">
                 Stack: React, Node.js, Gamification Engine
               </div>
-            </article>
+            </a>
 
             {/* Project 6 */}
-            <article className="flex flex-col">
-              <h3 className="font-playfair text-lg font-bold leading-tight mb-1 headline-hover cursor-pointer shrink-0">
-                <a href="https://github.com/pvishalkeerthan/PromptScape" target="_blank" rel="noreferrer">PromptScape: AI Creativity</a>
+            <a 
+              href="https://github.com/pvishalkeerthan/PromptScape" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="flex flex-col group cursor-pointer p-1 -m-1 rounded-sm transition-all duration-200"
+            >
+              <h3 className="font-playfair text-lg font-bold leading-tight mb-1 group-hover:text-news-accent group-hover:underline group-hover:decoration-[3px] group-hover:underline-offset-4 transition-all duration-200 shrink-0">
+                PromptScape: AI Creativity
               </h3>
               <div className="text-[10px] sm:text-xs text-justify-newspaper line-clamp-3">
                 A dynamic prompt-sharing space where users explore and share creative inputs for AI tools. Built with robust search, user profiles, and seamless Google authentication.
@@ -251,7 +267,7 @@ export default function Home() {
               <div className="mt-2 text-[9px] font-courier uppercase tracking-tight text-news-ink/60 italic">
                 Stack: Next.js, MongoDB, Tailwind CSS
               </div>
-            </article>
+            </a>
 
           </div>
         </section>
@@ -282,6 +298,21 @@ export default function Home() {
                 <span className="font-bold font-oswald uppercase text-[10px] block text-news-ink leading-tight">National Finalist • NewGen Ideathon</span>
                 <p className="text-[9px] font-courier leading-tight mt-0.5 text-news-ink/80">Designed a QR-based college bus tracking system with real-time route management.</p>
               </div>
+            </div>
+          </div>
+
+          {/* Tech Stack */}
+          <div className="shrink-0 pt-2 hairline-t">
+            <h2 className="font-oswald uppercase text-base hairline-b pb-1 mb-1">Tech Stack</h2>
+            <div className="font-courier text-[10px] xl:text-xs leading-relaxed">
+              <span className="font-bold font-oswald uppercase text-news-accent text-[11px] xl:text-xs block mb-0.5">Languages & Frontend</span>
+              JavaScript, TypeScript, Python, ReactJS, NextJS, TailwindCSS, Redux
+              <span className="font-bold font-oswald uppercase text-news-accent text-[11px] xl:text-xs block mt-2 mb-0.5">Backend & Systems</span>
+              NodeJS, Express.js, REST APIs, JWT, Socket.io, Firebase
+              <span className="font-bold font-oswald uppercase text-news-accent text-[10px] lg:text-[11px] xl:text-xs block mt-2 mb-0.5">Database & ORMs</span>
+              PostgreSQL, MySQL, MongoDB, Redis, Prisma ORM, Supabase
+              <span className="font-bold font-oswald uppercase text-news-accent text-[10px] lg:text-[11px] xl:text-xs block mt-2 mb-0.5">DevOps & Cloud</span>
+              Git, GitHub Actions, Docker, Nginx, AWS, Vercel
             </div>
           </div>
 
@@ -328,21 +359,6 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-
-          {/* Tech Stack */}
-          <div className="shrink-0 pt-2 hairline-t">
-            <h2 className="font-oswald uppercase text-base hairline-b pb-1 mb-1">Tech Stack</h2>
-            <div className="font-courier text-[10px] xl:text-xs leading-relaxed">
-              <span className="font-bold font-oswald uppercase text-news-accent text-[11px] xl:text-xs block mb-0.5">Languages & Frontend</span>
-              JavaScript, TypeScript, Python, ReactJS, NextJS, TailwindCSS, Redux
-              <span className="font-bold font-oswald uppercase text-news-accent text-[11px] xl:text-xs block mt-2 mb-0.5">Backend & Systems</span>
-              NodeJS, Express.js, REST APIs, JWT, Socket.io, Firebase
-              <span className="font-bold font-oswald uppercase text-news-accent text-[10px] lg:text-[11px] xl:text-xs block mt-2 mb-0.5">Database & ORMs</span>
-              PostgreSQL, MySQL, MongoDB, Redis, Prisma ORM, Supabase
-              <span className="font-bold font-oswald uppercase text-news-accent text-[10px] lg:text-[11px] xl:text-xs block mt-2 mb-0.5">DevOps & Cloud</span>
-              Git, GitHub Actions, Docker, Nginx, AWS, Vercel
             </div>
           </div>
 
