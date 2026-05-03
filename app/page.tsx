@@ -18,6 +18,8 @@ const wireItems = [
 export default function Home() {
 
   const [wireIndex, setWireIndex] = useState(0);
+  const [currentTime, setCurrentTime] = useState<Date | null>(null);
+  const [visitCount, setVisitCount] = useState<number>(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -26,10 +28,52 @@ export default function Home() {
     return () => clearInterval(timer);
   }, [wireItems.length]);
 
+  useEffect(() => {
+    // Clock logic
+    setCurrentTime(new Date());
+    const clockTimer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 60000);
+
+    // Visit count logic (Session-based increment)
+    const savedVisits = localStorage.getItem("portfolio_unique_visits");
+    const sessionActive = sessionStorage.getItem("portfolio_session_active");
+    
+    let currentCount = parseInt(savedVisits || "0");
+    
+    if (!sessionActive) {
+      currentCount += 1;
+      localStorage.setItem("portfolio_unique_visits", currentCount.toString());
+      sessionStorage.setItem("portfolio_session_active", "true");
+    }
+    
+    setVisitCount(currentCount);
+
+    return () => clearInterval(clockTimer);
+  }, []);
+
+  const formatDateTime = (date: Date | null) => {
+    if (!date) return "";
+    const options: Intl.DateTimeFormatOptions = { 
+      weekday: 'long', 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    };
+    const dateStr = date.toLocaleDateString('en-US', options).toUpperCase();
+    const timeStr = date.toLocaleTimeString('en-US', { 
+      hour: 'numeric', 
+      minute: '2-digit', 
+      hour12: true 
+    }).toUpperCase();
+    return `${dateStr} • ${timeStr}`;
+  };
+
   return (
     <div className="min-h-full lg:h-full w-full flex flex-col pt-2 px-3 pb-0 box-border">
       {/* Masthead */}
       <header className="flex flex-col items-center justify-center pb-3 double-hairline-b mb-4 shrink-0 relative">
+        {/* Desktop QR Code - Top Right */}
         <a 
           href="https://drive.google.com/file/d/1mLC_25jNq3-y8NmLJBW4qcwFnFkbUoMm/view" 
           target="_blank" 
@@ -46,18 +90,46 @@ export default function Home() {
           </div>
           <span className="font-courier text-[9px] uppercase tracking-widest text-news-ink font-bold group-hover:text-news-accent transition-colors">Resume</span>
         </a>
-        <div className="w-full flex justify-between text-xs sm:text-sm font-courier uppercase tracking-widest mb-2 hairline-b pb-2 md:pr-20">
-          <div>
+
+        <div className="w-full flex justify-between items-baseline text-xs sm:text-sm font-courier uppercase tracking-widest mb-2 hairline-b pb-2 md:pr-20 relative">
+          {/* Left Column */}
+          <div className="flex-1 flex items-baseline">
             <a href="https://github.com/pvishalkeerthan" target="_blank" rel="noreferrer" className="text-news-accent hover:underline mr-4 font-bold">GitHub</a>
             <a href="https://www.linkedin.com/in/vishal-keerthan/" target="_blank" rel="noreferrer" className="text-news-accent hover:underline mr-4 font-bold">LinkedIn</a>
             <a href="mailto:p.vishalkeerthan@gmail.com" className="text-news-accent hover:underline font-bold">Email</a>
           </div>
-          <div className="font-bold hidden lg:block text-center flex-1">
+
+          {/* Center Column - Absolutely Centered */}
+          <div className="font-bold hidden lg:block text-center whitespace-nowrap px-4">
             *** LATE CITY DISPATCH ***
           </div>
-          <div className="text-right whitespace-nowrap">
-            Vol. 1 • 2026
+
+          {/* Right Column */}
+          <div className="flex-1 flex justify-end items-baseline gap-2 sm:gap-4 font-bold text-[9px] sm:text-xs">
+            <span className="hidden sm:inline whitespace-nowrap">{currentTime ? formatDateTime(currentTime) : ""}</span>
+            <span className="sm:hidden whitespace-nowrap">{currentTime ? currentTime.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }).toUpperCase() : ""}</span>
+            <span className="border-l border-news-ink/30 pl-2 sm:pl-4 whitespace-nowrap">
+              CIRC. {visitCount.toLocaleString()}
+            </span>
           </div>
+
+          {/* Mobile QR Code - Hanging from the line */}
+          <a 
+            href="https://drive.google.com/file/d/1mLC_25jNq3-y8NmLJBW4qcwFnFkbUoMm/view" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="absolute right-0 top-full md:hidden flex flex-col items-center hover:scale-105 transition-transform cursor-pointer group z-10"
+            title="Click or Scan for Resume"
+          >
+            <div className="relative w-10 h-10 mix-blend-multiply group-hover:scale-105 transition-transform">
+              <img 
+                src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&bgcolor=EDE2D5&data=https://drive.google.com/file/d/1mLC_25jNq3-y8NmLJBW4qcwFnFkbUoMm/view" 
+                alt="QR Code" 
+                className="w-full h-full object-contain contrast-[1.1]"
+              />
+            </div>
+            <span className="font-courier text-[7px] uppercase tracking-widest text-news-ink font-bold group-hover:text-news-accent transition-colors -mt-0.5">Resume</span>
+          </a>
         </div>
         
         <div className="flex flex-col items-center justify-center w-full mt-2">
