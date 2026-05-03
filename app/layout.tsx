@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { UnifrakturMaguntia, Playfair_Display, Oswald, Lora, Courier_Prime } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const unifraktur = UnifrakturMaguntia({
   weight: "400",
@@ -44,7 +45,10 @@ export default function RootLayout({
       lang="en"
       className={`${unifraktur.variable} ${playfair.variable} ${oswald.variable} ${lora.variable} ${courier.variable} h-full antialiased`}
     >
-      <body suppressHydrationWarning className="min-h-full w-full lg:h-full lg:overflow-hidden overflow-y-auto flex flex-col font-lora bg-[#CBC3BA] text-news-ink selection:bg-news-accent selection:text-news-bg p-1 sm:p-2">{children}</body>
+      <body suppressHydrationWarning className="min-h-full w-full lg:h-full lg:overflow-hidden overflow-y-auto flex flex-col font-lora bg-[#CBC3BA] text-news-ink selection:bg-news-accent selection:text-news-bg p-1 sm:p-2">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
