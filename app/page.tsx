@@ -35,19 +35,44 @@ export default function Home() {
       setCurrentTime(new Date());
     }, 60000);
 
-    // Visit count logic (Session-based increment)
-    const savedVisits = localStorage.getItem("portfolio_unique_visits");
-    const sessionActive = sessionStorage.getItem("portfolio_session_active");
-    
-    let currentCount = parseInt(savedVisits || "0");
-    
-    if (!sessionActive) {
-      currentCount += 1;
-      localStorage.setItem("portfolio_unique_visits", currentCount.toString());
-      sessionStorage.setItem("portfolio_session_active", "true");
-    }
-    
-    setVisitCount(currentCount);
+    // Visit count logic (Global Increment)
+    const updateVisitCount = async () => {
+      const sessionActive = sessionStorage.getItem("portfolio_session_active");
+      const baseCount = 5240; // Base "circulation" for the newspaper look
+
+      try {
+        if (!sessionActive) {
+          // Increment globally
+          const res = await fetch("/api/visit");
+          const data = await res.json();
+          if (data.count) {
+            setVisitCount(baseCount + data.count);
+            sessionStorage.setItem("portfolio_session_active", "true");
+          } else {
+            // Fallback to local if KV not ready
+            const local = parseInt(localStorage.getItem("portfolio_visits") || "0") + 1;
+            setVisitCount(baseCount + local);
+            localStorage.setItem("portfolio_visits", local.toString());
+          }
+        } else {
+          // Just fetch current count (using POST to get current without incrementing)
+          const res = await fetch("/api/visit", { method: "POST" });
+          const data = await res.json();
+          if (data.count !== null) {
+            setVisitCount(baseCount + data.count);
+          } else {
+            const local = parseInt(localStorage.getItem("portfolio_visits") || "0");
+            setVisitCount(baseCount + local);
+          }
+        }
+      } catch (err) {
+        // Safe fallback
+        const local = parseInt(localStorage.getItem("portfolio_visits") || "0");
+        setVisitCount(baseCount + (local || 1));
+      }
+    };
+
+    updateVisitCount();
 
     return () => clearInterval(clockTimer);
   }, []);
