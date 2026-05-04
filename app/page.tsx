@@ -38,7 +38,7 @@ export default function Home() {
     // Visit count logic (Global Increment)
     const updateVisitCount = async () => {
       const sessionActive = sessionStorage.getItem("portfolio_session_active");
-      const baseCount = 5240; // Base "circulation" for the newspaper look
+      const baseCount = 0; // Show actual real-time visits
 
       try {
         if (!sessionActive) {
