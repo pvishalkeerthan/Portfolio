@@ -4,14 +4,15 @@ import { NextResponse } from "next/server";
 export async function GET() {
   try {
     // Increment the visit counter
-    // We use a simple key 'portfolio_visits'
     const count = await kv.incr("portfolio_visits");
-    
     return NextResponse.json({ count });
   } catch (error) {
-    console.error("Error updating visit count:", error);
-    // Fallback if KV is not configured or fails
-    return NextResponse.json({ count: null, error: "KV not configured" }, { status: 500 });
+    console.error("KV Error:", error);
+    return NextResponse.json({ 
+      count: null, 
+      error: "Connection failed. Please ensure KV is connected in Vercel.",
+      details: error instanceof Error ? error.message : String(error)
+    }, { status: 500 });
   }
 }
 
