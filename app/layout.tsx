@@ -31,8 +31,18 @@ const courier = Courier_Prime({
 });
 
 export const metadata: Metadata = {
-  title: "Vishal Keerthan Parankusham | Product Engineer",
-  description: "A single-viewport broadsheet newspaper portfolio highlighting expertise in Full-Stack Development and DevOps.",
+  title: "Vishal Keerthan Parankusham Portfolio",
+  description: "Product Engineer, Ex-Geode Labs, 7x Hackathons winner, JPMC Code for Good '25 winner. Building robust, scalable systems and high-performance architecture.",
+  openGraph: {
+    title: "Vishal Keerthan Parankusham Portfolio",
+    description: "Product Engineer, Ex-Geode Labs, 7x Hackathons winner, JPMC Code for Good '25 winner. Building robust, scalable systems and high-performance architecture.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Vishal Keerthan Parankusham Portfolio",
+    description: "Product Engineer, Ex-Geode Labs, 7x Hackathons winner, JPMC Code for Good '25 winner. Building robust, scalable systems and high-performance architecture.",
+  },
 };
 
 export default function RootLayout({
