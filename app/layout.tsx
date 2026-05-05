@@ -31,17 +31,23 @@ const courier = Courier_Prime({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://pvishalkeerthan.vercel.app"),
   title: "Vishal Keerthan Parankusham Portfolio",
   description: "Product Engineer, Ex-Geode Labs, 7x Hackathons winner, JPMC Code for Good '25 winner. Building robust, scalable systems and high-performance architecture.",
   openGraph: {
     title: "Vishal Keerthan Parankusham Portfolio",
     description: "Product Engineer, Ex-Geode Labs, 7x Hackathons winner, JPMC Code for Good '25 winner. Building robust, scalable systems and high-performance architecture.",
+    url: "https://pvishalkeerthan.vercel.app",
+    siteName: "Vishal Keerthan Portfolio",
+    images: ["/icon.png"],
+    locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary",
     title: "Vishal Keerthan Parankusham Portfolio",
     description: "Product Engineer, Ex-Geode Labs, 7x Hackathons winner, JPMC Code for Good '25 winner. Building robust, scalable systems and high-performance architecture.",
+    images: ["/icon.png"],
   },
 };
 
